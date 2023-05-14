@@ -46,7 +46,11 @@ public class Menu {
                     printAllPrizeToys(store);
                     case 0:
                     scanner.close();
-                    return;
+                    System.exit(0);
+                    break;
+                    default:
+                    System.out.println("Такой команды нет");
+                    break;
                 }
             }
         }
@@ -70,6 +74,7 @@ public class Menu {
         System.out.println("Список всех выигрышных игрушек:");
         for (Toy toy : store.prizeToys) {
             System.out.println(toy);
+            store.saveToyToFile(toy, "prize.txt");
         }
     }
 
